@@ -18,7 +18,7 @@ We are grateful for their outstanding work.
 
 We consider three heterogeneous GNN backbones, i.e., GCN, GAT, and GPR-GNN . Each of the backbones has very different message propagation mechanisms. For each client, we assign its local model by sampling from the three backbones. We further modify each local model's number of layers and hidden state dimensions to enhance heterogeneity.
 
-For details of the model architecture, please refer to [model setting files](https://github.com/zza234s/MHFL/tree/main/federatedscope/model_heterogeneity/model_settings) and [model definition files](https://github.com/zza234s/MHFL/tree/main/federatedscope/contrib/model)
+For details of the model architecture, please refer to [model setting files](federatedscope/model_heterogeneity/model_settings) and [model definition files](federatedscope/contrib/model)
 
 
 
