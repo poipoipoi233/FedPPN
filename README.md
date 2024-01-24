@@ -3,6 +3,12 @@ This is the official code of the paper: Model-Heterogeneous Federated Graph Lear
 
 
 
+## Please Kindly Note:
+
+Here [FedPPN_Appendix.pdf](./FedPPN_APPENDIX.pdf) is the full appendix of our paper. We are very sorry for accidentally missing the deadline for submitting supplementary materials.
+
+
+
 ## Acknowledgment
 
 All code implementations are based on the FederatedScope V0.3.0: https://github.com/alibaba/FederatedScope 
