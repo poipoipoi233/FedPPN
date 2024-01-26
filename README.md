@@ -3,9 +3,6 @@ This is the official code of the paper: Model-Heterogeneous Federated Graph Lear
 
 
 
-## Please Kindly Note:
-
-Here [FedPPN_Appendix.pdf](./FedPPN_APPENDIX.pdf) is the full appendix of our paper. We are very sorry for accidentally missing the deadline for submitting supplementary materials.
 
 
 
