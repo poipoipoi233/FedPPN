@@ -145,7 +145,7 @@ python main.py --cfg model_heterogeneity/SFL_methods/FedGH/FedGH_on_cora.yaml --
 
 # Experiments on additional model architecture groups
 
- We run experiments under three additional local model architecture groups (i.e, MHGNN_1, MHGNN_2, MHGNN_3). Please see Sec C.1 in our appendices (or [model settings folder](federatedscope/model_heterogeneity/model_settings)) for more details.
+We run experiments under three additional local model architecture groups (i.e., MHGNN_1, MHGNN_2, MHGNN_3). Please see Sec C.1 in our [appendices](./FedPPN_APPENDIX.pdf) (or [model settings folder](federatedscope/model_heterogeneity/model_settings)) for more details.
 
 ```python
 # MHGNN_1
