@@ -1,7 +1,5 @@
-# Model-Heterogeneous Federated Graph Learning with Prototype Propagation Network
-This is the official code of the paper: Model-Heterogeneous Federated Graph Learning with Prototype Propagation Network
-
-
+# Model-Heterogeneous Federated Graph Learning with Prototype Propagation
+This is the official code of the paper: Model-Heterogeneous Federated Graph Learning with Prototype Propagation
 
 
 
@@ -53,12 +51,13 @@ conda activate fs
 conda install -y pytorch=1.10.1 torchvision=0.11.2 torchaudio=0.10.1 torchtext=0.11.1 cudatoolkit=11.3 -c pytorch -c conda-forge
 
 # install some extra dependencies
-conda install -y pyg -c pyg
+conda install -y pyg==2.0.4 -c pyg
 conda install -y nltk
 pip install rdkit
 pip install ipdb
 pip install kornia
 pip install timm
+pip install ogb
 ```
 
 
@@ -77,26 +76,66 @@ pip install -e .[dev]
 cd federatedscope
 ```
 
-- Run the script
+- Run the script （The main experiments）
 
 ```python
-# python main.py --cfg [the path of main cfg file] --client_cfg [the path of model cfg file]
-# Cora for 5 clients
-python main.py --cfg model_heterogeneity/methods/FedPPN/FedPPN_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
+# python main.py --cfg ${main YAML file} --client_cfg ${model settings YAML file} federate.client_num ${total number of clients}
+
+# Cora
+# For 3 clients
+python main.py --cfg model_heterogeneity/SFL_methods/FedPPN/FedPPN_on_cora.yaml --client_cfg model_heterogeneity/model_settings/3_Heterogeneous_GNNs.yaml federate.client_num 3
+
+# For 5 clients
+python main.py --cfg model_heterogeneity/SFL_methods/FedPPN/FedPPN_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
+
+# For 10 clients
+python main.py --cfg model_heterogeneity/SFL_methods/FedPPN/FedPPN_on_cora.yaml --client_cfg model_heterogeneity/model_settings/10_Heterogeneous_GNNs.yaml federate.client_num 10
+
+# Citeseer
+# For 3 clients
+python main.py --cfg model_heterogeneity/SFL_methods/FedPPN/FedPPN_on_citeseer.yaml --client_cfg model_heterogeneity/model_settings/3_Heterogeneous_GNNs.yaml federate.client_num 3
+
+# For 5 clients
+python main.py --cfg model_heterogeneity/SFL_methods/FedPPN/FedPPN_on_citeseer.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
+
+# For 10 clients
+python main.py --cfg model_heterogeneity/SFL_methods/FedPPN/FedPPN_on_citeseer.yaml --client_cfg model_heterogeneity/model_settings/10_Heterogeneous_GNNs.yaml federate.client_num 10
+
+# PubMed
+# For 3 clients
+python main.py --cfg model_heterogeneity/SFL_methods/FedPPN/FedPPN_on_pubmed.yaml --client_cfg model_heterogeneity/model_settings/3_Heterogeneous_GNNs.yaml federate.client_num 3
+
+# For 5 clients
+python main.py --cfg model_heterogeneity/SFL_methods/FedPPN/FedPPN_on_pubmed.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
+
+# For 10 clients
+python main.py --cfg model_heterogeneity/SFL_methods/FedPPN/FedPPN_on_pubmed.yaml --client_cfg model_heterogeneity/model_settings/10_Heterogeneous_GNNs.yaml federate.client_num 10
+
+
 ```
 
-## Run Baselines  (Take running FedProto as an example)
+## Run Baselines 
 
-You can run our reproduced baseline methods in the same way as running FedPPN.
+Users can run our reproduced baseline methods in the same way as running FedPPN, by simply replace ${main YAML file} and  ${model settings YAML file}. 
 
-- Enter the "FedProto" folder
+-  Take running different methods on the Cora dataset with 5 clients as an example:
 
-```
-cd federatedscope/model_heterogeneity/SFL_methods/FedProto
-```
+```python
+#Local
+python main.py --cfg model_heterogeneity/SFL_methods/Local/Local_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
 
-- Run the script
+#FML
+python main.py --cfg model_heterogeneity/SFL_methods/FML/FML_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
 
-```
-python main.py --cfg model_heterogeneity/methods/FedProto/FedProto_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
+#FedKD
+python main.py --cfg model_heterogeneity/SFL_methods/FedKD/FedKD_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
+
+#FedProto
+python main.py --cfg model_heterogeneity/SFL_methods/FedProto/FedProto_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
+
+#FedPCL
+python main.py --cfg model_heterogeneity/SFL_methods/FedPCL/FedPCL_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
+
+#FedGH
+python main.py --cfg model_heterogeneity/SFL_methods/FedGH/FedGH_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
 ```

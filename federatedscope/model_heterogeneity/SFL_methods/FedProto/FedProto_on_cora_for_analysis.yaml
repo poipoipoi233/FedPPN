@@ -19,6 +19,7 @@ data:
   root: data/
   type: cora
   splitter: 'louvain'
+  local_eval_whole_test_dataset: True
 dataloader:
   type: pyg
   batch_size: 1
