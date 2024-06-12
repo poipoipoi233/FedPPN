@@ -139,6 +139,9 @@ python main.py --cfg model_heterogeneity/SFL_methods/FedPCL/FedPCL_on_cora.yaml 
 
 #FedGH
 python main.py --cfg model_heterogeneity/SFL_methods/FedGH/FedGH_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
+
+#FedTGP
+python main.py --cfg model_heterogeneity/SFL_methods/FedTGP/FedTGP_on_cora.yaml --client_cfg model_heterogeneity/model_settings/5_Heterogeneous_GNNs.yaml federate.client_num 5
 ```
 
 
